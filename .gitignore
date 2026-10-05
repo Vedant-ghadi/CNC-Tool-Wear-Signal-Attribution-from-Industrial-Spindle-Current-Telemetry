@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local raw and generated data
+data/
+processed/
+results/
+results_*/
+figures/
+*.csv
+*.csv.gz
+*.parquet
+*.jsonl
+*.zip
+
+# Generated reports and private dissertation artifacts
+*.doc
+*.docx
+*.pdf
+*.pptx
+*.xlsx
+
+# Runtime manifests and plots
+run_manifest.json
+*.png
+*.svg
+
+# IDE and OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local caches
+.matplotlib_cache/
+

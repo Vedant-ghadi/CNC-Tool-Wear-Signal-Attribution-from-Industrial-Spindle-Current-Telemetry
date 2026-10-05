@@ -1,0 +1,18 @@
+# Pinned lower bounds so a pandas/numpy upgrade cannot silently change results.
+# The pipeline was developed and verified against the versions in the comments.
+#
+# Note on pandas: the original code hit two breaking changes during development
+# (`to_numeric(errors="ignore")` removal and the `np.trapz` -> `np.trapezoid`
+# rename). Pinning avoids rediscovering those.
+
+pandas>=2.2          # verified with 3.0.2
+numpy>=1.26          # verified with 2.4.4
+scipy>=1.11          # verified with 1.17.1
+scikit-learn>=1.3    # verified with 1.8.0 -- KMeans + silhouette for cluster k selection
+matplotlib>=3.7      # verified with 3.10.9 -- optional, SVG fallback if absent
+
+# Optional. build_robust_event_evidence falls back to a built-in exact NumPy
+# PELT (L2 cost) when this is not installed, so the stage no longer crashes.
+ruptures>=1.1.9
+
+# tslearn was listed originally but never imported by any stage. Removed.
